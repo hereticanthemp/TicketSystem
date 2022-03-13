@@ -5,7 +5,7 @@ using TicketSystem.Services;
 namespace TicketSystem.Controllers
 {
     [ApiController]
-    [Route("[controller]/[action]")]
+    [Route("api/[controller]/[action]")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;

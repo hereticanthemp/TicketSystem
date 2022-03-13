@@ -3,7 +3,7 @@
 namespace TicketSystem.Controllers
 {
     [ApiController]
-    [Route("[controller]/[action]")]
+    [Route("api/[controller]/[action]")]
     public class TicketController : ControllerBase
     {
         [HttpPost]
