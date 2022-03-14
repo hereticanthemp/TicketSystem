@@ -1,0 +1,3 @@
+[submodule "ticket-system-web"]
+	path = ticket-system-web
+	url = https://github.com/hereticanthemp/ticket-system-web.git
