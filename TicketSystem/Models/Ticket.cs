@@ -26,5 +26,17 @@ namespace TicketSystem.Models
         public User? Creator { get; set; }
 
         public User? Resolver { get; set; }
+
+        public int Severity { get; set; }
+
+        public int Priority { get; set; }
+
+        public TicketType Type { get; set; }
+    }
+
+    public enum TicketType
+    {
+        Bug = 1,
+        FeatureRequest = 2
     }
 }

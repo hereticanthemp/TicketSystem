@@ -9,9 +9,9 @@ namespace TicketSystem.Services
         {
             _tickets = new List<Ticket>
             {
-                new Ticket() { Id = 1, Deleted =false, Description = "Normal", Summary = "Test1", Creator = new User{ Username="QA"}, CreateTime = new DateTime(2022,1,1)},
-                new Ticket() { Id = 2, Deleted =false, Description = "Resolved", Summary = "Test2", Creator = new User{ Username="QA"}, CreateTime = new DateTime(2022,1,2), Resolved= true},
-                new Ticket() { Id = 3, Deleted =true, Description = "Deleted Item", Summary = "Test3", Creator = new User{ Username="QA"}, CreateTime = new DateTime(2022,1,3)},
+                new Ticket() { Id = 1, Deleted =false, Description = "Normal", Summary = "Test1", Creator = new User{ Username="QA"}, CreateTime = new DateTime(2022,1,1), Severity = 1, Priority = 1,Type = TicketType.Bug},
+                new Ticket() { Id = 2, Deleted =false, Description = "Resolved", Summary = "Test2", Creator = new User{ Username="QA"}, CreateTime = new DateTime(2022,1,2), Resolved= true, Severity = 1, Priority =1,Type = TicketType.Bug},
+                new Ticket() { Id = 3, Deleted =true, Description = "Deleted Item", Summary = "Test3", Creator = new User{ Username="QA"}, CreateTime = new DateTime(2022,1,3),Severity = 1, Priority = 1,Type = TicketType.FeatureRequest},
             };
         }
 
