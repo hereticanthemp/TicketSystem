@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<IUserService, MockUserService>();
+builder.Services.AddSingleton<ITicketService, MockTicketService>();
 
 
 builder.Services.AddControllers();
