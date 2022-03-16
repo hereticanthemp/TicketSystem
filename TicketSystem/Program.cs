@@ -16,8 +16,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "web-client",
                       builder =>
                       {
-                          builder.WithOrigins("http://localhost:8080",
-                                              "http://127.0.0.1:8080");
+                          builder.WithOrigins("http://localhost:8081");
                           builder.AllowAnyMethod();
                           builder.AllowAnyHeader();
                       });
