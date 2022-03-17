@@ -20,6 +20,8 @@ namespace TicketSystem.Services
             ticket.CreateTime = DateTime.Now;
             ticket.UpdateTime = ticket.CreateTime;
             ticket.Id = _tickets.Last().Id + 1;
+            ticket.Deleted = ticket.Deleted ?? false;
+            ticket.Resolved = ticket.Resolved ?? false;
             _tickets.Add(ticket);
         }
 
@@ -46,13 +48,13 @@ namespace TicketSystem.Services
         public ICollection<Ticket> GetTickets(TicketConditionParam param)
         {
             var resp = _tickets.AsQueryable();
-            if (!param.IncludeDeleted)
+            if (param.IncludeDeleted == false)
             {
-                resp = resp.Where(t => !t.Deleted);
+                resp = resp.Where(t => !(t.Deleted!.Value));
             }
             if (!param.IncludeResolved)
             {
-                resp = resp.Where(t => !t.Resolved);
+                resp = resp.Where(t => !(t.Resolved!.Value));
             }
             if (param.StartTime != null)
             {
